@@ -31,13 +31,13 @@ public class Locators extends BaseTest {
                 .near(By.id("userName-label"),100)
                 .above(By.id("userEmail-wrapper"));
         WebElement element = null;
-        try {
+//        try {
             element = driver.findElement(nameLocator);
-        }
-        catch(NoSuchElementException exception){
-            Assert.fail("Not found element");
-        }
-        element.sendKeys("Name");
+//        }
+//        catch(NoSuchElementException exception){
+//            Assert.fail("Not found element");
+//        }
+//        element.sendKeys("Name");
 
         helper.wait(5000);
     }

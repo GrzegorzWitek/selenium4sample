@@ -42,9 +42,9 @@ public final class Driver {
     }
 
     public WebDriver getDriver() {
-        return getChromeDriver();
+//        return getChromeDriver();
 //        return getFirefoxDriver();
-//        return getChromeDriverWithMerge();
+        return getChromeDriverWithMerge();
     }
 
     public WebDriver getChromeDriver() {
@@ -71,7 +71,7 @@ public final class Driver {
             capabilities.setVersion("99");
 
             ChromeOptions options = new ChromeOptions();
-            options.merge(capabilities);
+            options = options.merge(capabilities);
             options.addArguments("--kiosk");
 
             printOptions(options);
@@ -105,7 +105,7 @@ public final class Driver {
         if (!driver.containsKey(id)) {
             FirefoxOptions options = new FirefoxOptions();
             options.setPlatformName(Platform.MAC.name());
-            options.setLegacy(false);
+//            options.setLegacy(false);
             options.addArguments("--width=800", "--height=600");
 
             printOptions(options);
